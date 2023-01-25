@@ -6,4 +6,10 @@ tshark -r capture.pcap -T fields -e ip.src -e ip.dst -e frame.protocols -e ssl.h
 # summarize contents of a pcap file using tcpdump
 tcpdump -nn -r capture.pcap | awk '{print $3, $5, $9}' | sort | uniq -c > summary.txt
 
-# summarize contents of current httpd.log
+# summarize warning/error/critical entires of current syslog
+grep -E '(warning|error|critical)' syslog.txt | awk '{print $1 " " $2 " " $3 " " $6}' | sort | uniq -c > summary.txt
+
+# another way of summarizing syslog warning/error/critical syslog entries
+#awk '/(warning|error|critical)/ {print $1 " " $2 " " $3 " " $6}' syslog.txt | sort | uniq -c > summary.txt
+
+# 
