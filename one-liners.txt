@@ -1,0 +1,1 @@
+# add the following lines to .bash_alias
