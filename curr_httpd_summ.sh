@@ -1,4 +1,10 @@
- #!/bin/bash       
+ #!/bin/bash
+ 
+ # Script name: curr_httpd_summ.sh
+ # Description: Summarizes the current Apache httpd log file
+ # Author: J Clingensmith    
+ # Date: 01/25/2023    
+ # Version: 1.0  
                    
  # Location of Apache log file                        
  logfile="/var/log/httpd/access_log"                  
